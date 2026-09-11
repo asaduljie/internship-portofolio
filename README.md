@@ -55,7 +55,7 @@ Siap berkontribusi secara langsung dalam posisi **Software Engineering Intern / 
 ### 2. 📚 Bookwise Literacy & Catalog Platform
 > *Interactive Digital Library & Book Recommendation Web Platform*
 
-- **Live Demo**: [bookwise-website-alpha.vercel.app](https://bookwise-website-alpha.vercel.app)
+- **Live Demo**: [university-library-managment.vercel.app](https://university-library-managment.vercel.app/)
 - **GitHub Repository**: [`asaduljie/Bookwise-Website`](https://github.com/asaduljie/Bookwise-Website)
 - **Tech Stack**: TypeScript, Next.js, Tailwind CSS, Vercel.
 - **Key Features & Engineering Highlights**:
