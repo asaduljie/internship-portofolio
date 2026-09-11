@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asadul Hayyan | Portfolio & GitHub Showcase</title>
+  <meta name="description" content="Portofolio resmi Asadul Hayyan - Full-Stack Web, Mobile Developer, Generative AI & Data Mining Enthusiast." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg-dark: #0B0F19;
+      --bg-card: rgba(18, 24, 40, 0.75);
+      --bg-card-hover: rgba(30, 41, 69, 0.85);
+      --primary: #3B82F6;
+      --primary-glow: rgba(59, 130, 246, 0.35);
+      --secondary: #8B5CF6;
+      --secondary-glow: rgba(139, 92, 246, 0.35);
+      --accent: #10B981;
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-active: rgba(59, 130, 246, 0.5);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Ambient Glowing Orbs */
+    .ambient-glow {
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.45;
+      animation: floatOrb 12s ease-in-out infinite alternate;
+    }
+
+    .glow-1 {
+      top: -100px;
+      left: -100px;
+      background: radial-gradient(circle, #3B82F6, transparent 70%);
+    }
+
+    .glow-2 {
+      bottom: 10%;
+      right: -100px;
+      background: radial-gradient(circle, #8B5CF6, transparent 70%);
+      animation-duration: 16s;
+    }
+
+    .glow-3 {
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, #06B6D4, transparent 70%);
+      opacity: 0.2;
+    }
+
+    @keyframes floatOrb {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(40px) scale(1.1); }
+    }
+
+    /* Layout Containers */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(11, 15, 25, 0.7);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #60A5FA, #A78BFA);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #FFF;
+    }
+
+    .nav-btn {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 99px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--primary-glow);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 90px 0 60px;
+      text-align: center;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 6px 16px;
+      border-radius: 99px;
+      color: #93C5FD;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #60A5FA 0%, #C084FC 50%, #34D399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563EB, #7C3AED);
+      color: #FFF;
+      padding: 12px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 10px 25px var(--primary-glow);
+      transition: all 0.25s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px var(--primary-glow);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #FFF;
+      border: 1px solid var(--border-color);
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    /* Stats Banner */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin: 60px 0 80px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      padding: 24px 20px;
+      border-radius: 18px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-active);
+      background: var(--bg-card-hover);
+    }
+
+    .stat-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #60A5FA;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 60px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+    }
+
+    /* Filter Tabs */
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #FFF;
+      border-color: transparent;
+      box-shadow: 0 4px 15px var(--primary-glow);
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 28px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-active);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .project-banner {
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1E293B, #0F172A);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .project-banner-icon {
+      font-size: 3.5rem;
+      opacity: 0.85;
+      transition: transform 0.4s;
+    }
+
+    .project-card:hover .project-banner-icon {
+      transform: scale(1.15) rotate(4deg);
+    }
+
+    .project-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-color);
+      color: #93C5FD;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 99px;
+    }
+
+    .project-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .project-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #FFF;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .tech-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #CBD5E1;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #60A5FA;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: gap 0.2s;
+    }
+
+    .project-link:hover {
+      gap: 9px;
+      color: #93C5FD;
+    }
+
+    .demo-link {
+      color: #34D399;
+    }
+    .demo-link:hover {
+      color: #6EE7B7;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-category {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+    }
+
+    .skill-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .skill-cat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(59, 130, 246, 0.15);
+      color: #60A5FA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .skill-cat-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      color: #E2E8F0;
+      padding: 6px 14px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .skill-item:hover {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.4);
+      color: #93C5FD;
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(30, 41, 69, 0.8), rgba(18, 24, 40, 0.9));
+      border: 1px solid var(--border-active);
+      border-radius: 28px;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 60px;
+    }
+
+    .contact-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .contact-desc {
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto 32px;
+      font-size: 1rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 36px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.4rem;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Navbar -->
+  <header>
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <i data-lucide="code-2"></i> Asadul Hayyan
+      </a>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#github">GitHub Stats</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="https://github.com/asaduljie" target="_blank" class="nav-btn">
+        <i data-lucide="github" style="width: 16px; height: 16px;"></i> GitHub Profile
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge-pill">
+        <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i> Available for Projects & Collaboration
+      </div>
+      <h1 class="hero-title">
+        Membangun Solusi Digital dengan <br />
+        <span class="gradient-text">Web, Mobile & Smart AI Systems</span>
+      </h1>
+      <p class="hero-desc">
+        Halo! Saya <strong>Asadul Hayyan</strong> (<strong>@asaduljie</strong>), Software Engineer yang berfokus pada pengembangan Full-Stack Web modern (Next.js, Express, PostgreSQL), Mobile Apps (Flutter), integrasi Generative AI (GPT-4, DALL-E 3), dan Data Mining.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">
+          <i data-lucide="folder-git-2" style="width: 18px; height: 18px;"></i> Jelajahi Proyek
+        </a>
+        <a href="mailto:asaduljie123@gmail.com" class="btn-secondary">
+          <i data-lucide="mail" style="width: 18px; height: 18px;"></i> Hubungi Saya
+        </a>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">23+</div>
+          <div class="stat-label">GitHub Repositories</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">Live Deployed Apps</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Zero-Trust & Modern Tech</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Core Languages (TS, Py, Dart...)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Portofolio & Proyek Pilihan</h2>
+        <p class="section-subtitle">Koleksi karya dari sistem pelayanan publik, asisten AI, platform literasi, hingga analitik data mining.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filters">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">Semua Proyek</button>
+        <button class="filter-btn" onclick="filterProjects('web', this)">Fullstack & Web</button>
+        <button class="filter-btn" onclick="filterProjects('mobile', this)">Mobile App</button>
+        <button class="filter-btn" onclick="filterProjects('ai', this)">AI & LLM</button>
+        <button class="filter-btn" onclick="filterProjects('data', this)">Data Science & Mining</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projectContainer">
+        
+        <!-- Project 1: JOMBE DIGITAL -->
+        <div class="project-card" data-category="web mobile">
+          <div class="project-banner">
+            <span class="project-banner-icon">🏛️</span>
+            <span class="project-tag">Flagship Project</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Jombe Digital - Sistem Pelayanan Desa</h3>
+            <p class="project-desc">
+              Platform administrasi publik terpadu (Web & Mobile Flutter) dengan arsitektur Zero-Trust Security, verifikasi berkas berkecepatan tinggi, integrasi WhatsApp Gateway, dan asisten AI pelayanan warga.
+            </p>
+            <div class="project-tech">
+              <span class="tech-pill">Next.js 14</span>
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">Flutter</span>
+              <span class="tech-pill">Express.js</span>
+              <span class="tech-pill">Prisma ORM</span>
+              <span class="tech-pill">PostgreSQL</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/asaduljie/Website_Pelayanan_Desa_Jombe" target="_blank" class="project-link">
+                <i data-lucide="github" style="width: 16px; height: 16px;"></i> Repository
+              </a>
+              <span class="tech-pill" style="color: #34D399; border-color: rgba(52,211,153,0.3);">Full System</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: ELIFAI V2 -->
+        <div class="project-card" data-category="ai">
+          <div class="project-banner">
+            <span class="project-banner-icon">🤖</span>
+            <span class="project-tag">AI Powered</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">ELIFAI V2 (Explain Like I'm 5)</h3>
+            <p class="project-desc">
+              Chatbot cerdas yang menjelaskan konsep sulit menjadi analogi sederhana untuk anak-anak, dipadukan dengan generator ilustrasi gambar otomatis berbasis DALL-E 3.
+            </p>
+            <div class="project-tech">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Streamlit</span>
+              <span class="tech-pill">OpenAI GPT-4</span>
+              <span class="tech-pill">DALL-E 3</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/asaduljie/ELIFAI_V2" target="_blank" class="project-link">
+                <i data-lucide="github" style="width: 16px; height: 16px;"></i> Repository
+              </a>
+              <a href="https://elifaiv2.streamlit.app/" target="_blank" class="project-link demo-link">
+                <i data-lucide="external-link" style="width: 16px; height: 16px;"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Bookwise -->
+        <div class="project-card" data-category="web">
+          <div class="project-banner">
+            <span class="project-banner-icon">📚</span>
+            <span class="project-tag">Web App</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Bookwise Literacy Platform</h3>
+            <p class="project-desc">
+              Aplikasi web interaktif untuk penjelajahan buku, katalog literasi digital, dan sistem rekomendasi dengan UI yang modern dan responsif.
+            </p>
+            <div class="project-tech">
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">Next.js</span>
+              <span class="tech-pill">Tailwind CSS</span>
+              <span class="tech-pill">Vercel</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/asaduljie/Bookwise-Website" target="_blank" class="project-link">
+                <i data-lucide="github" style="width: 16px; height: 16px;"></i> Repository
+              </a>
+              <a href="https://bookwise-website-alpha.vercel.app" target="_blank" class="project-link demo-link">
+                <i data-lucide="external-link" style="width: 16px; height: 16px;"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Reuse Website -->
+        <div class="project-card" data-category="web">
+          <div class="project-banner">
+            <span class="project-banner-icon">♻️</span>
+            <span class="project-tag">Sustainability</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Reuse Eco-Platform</h3>
+            <p class="project-desc">
+              Website platform ramah lingkungan yang mengedukasi dan memfasilitasi daur ulang dan pemanfaatan kembali barang bekas bernilai guna.
+            </p>
+            <div class="project-tech">
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">React</span>
+              <span class="tech-pill">Tailwind CSS</span>
+              <span class="tech-pill">Vercel</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/asaduljie/Reuse_website" target="_blank" class="project-link">
+                <i data-lucide="github" style="width: 16px; height: 16px;"></i> Repository
+              </a>
+              <a href="https://reuse-website.vercel.app" target="_blank" class="project-link demo-link">
+                <i data-lucide="external-link" style="width: 16px; height: 16px;"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Data Mining Suite -->
+        <div class="project-card" data-category="data">
+          <div class="project-banner">
+            <span class="project-banner-icon">📊</span>
+            <span class="project-tag">Analytics</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Streamlit Data Mining Suite</h3>
+            <p class="project-desc">
+              Dashboard interaktif untuk eksplorasi data mining, data cleaning, analisis clustering, klasifikasi, dan visualisasi distribusi dataset secara komprehensif.
+            </p>
+            <div class="project-tech">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Streamlit</span>
+              <span class="tech-pill">Pandas</span>
+              <span class="tech-pill">Scikit-Learn</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/asaduljie/streamlit-data-mining" target="_blank" class="project-link">
+                <i data-lucide="github" style="width: 16px; height: 16px;"></i> Repository
+              </a>
+              <span class="tech-pill" style="color: #60A5FA;">Data Suite</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Apotek Digital -->
+        <div class="project-card" data-category="data">
+          <div class="project-banner">
+            <span class="project-banner-icon">💊</span>
+            <span class="project-tag">Desktop & Logic</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Apotek Digital Management</h3>
+            <p class="project-desc">
+              Aplikasi otomasi pengelolaan inventaris obat, pencatatan transaksi kasir, dan pelaporan stok apotek digital dengan akurasi tinggi.
+            </p>
+            <div class="project-tech">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Database</span>
+              <span class="tech-pill">GUI</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/asaduljie/Apotek_Digital" target="_blank" class="project-link">
+                <i data-lucide="github" style="width: 16px; height: 16px;"></i> Repository
+              </a>
+              <span class="tech-pill" style="color: #F59E0B;">Management</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Matrix -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Keahlian & Teknologi</h2>
+        <p class="section-subtitle">Keahlian teknis yang digunakan dalam pembuatan aplikasi, pipeline AI, dan sistem database.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i data-lucide="layout"></i></div>
+            <h3 class="skill-cat-title">Frontend & UI</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-item">Next.js 14 (App Router)</span>
+            <span class="skill-item">React.js</span>
+            <span class="skill-item">TypeScript</span>
+            <span class="skill-item">Tailwind CSS</span>
+            <span class="skill-item">HTML5 / CSS3</span>
+            <span class="skill-item">Lucide & Responsive UI</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i data-lucide="server"></i></div>
+            <h3 class="skill-cat-title">Backend & Database</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-item">Node.js</span>
+            <span class="skill-item">Express.js</span>
+            <span class="skill-item">Prisma ORM</span>
+            <span class="skill-item">PostgreSQL</span>
+            <span class="skill-item">MySQL</span>
+            <span class="skill-item">RESTful API Design</span>
+            <span class="skill-item">JWT & Zero-Trust Auth</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i data-lucide="smartphone"></i></div>
+            <h3 class="skill-cat-title">Mobile & Cross-Platform</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-item">Flutter (Dart)</span>
+            <span class="skill-item">Android Development</span>
+            <span class="skill-item">State Management</span>
+            <span class="skill-item">Secure Storage</span>
+            <span class="skill-item">API Integration</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i data-lucide="bot"></i></div>
+            <h3 class="skill-cat-title">AI, ML & Data Mining</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-item">Python</span>
+            <span class="skill-item">OpenAI GPT-4 & DALL-E</span>
+            <span class="skill-item">Streamlit Apps</span>
+            <span class="skill-item">Pandas & NumPy</span>
+            <span class="skill-item">Scikit-Learn</span>
+            <span class="skill-item">Jupyter Notebooks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GitHub Statistics Section -->
+  <section id="github">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">GitHub Activity & Stats</h2>
+        <p class="section-subtitle">Ringkasan aktivitas dan bahasa pemrograman di akun @asaduljie.</p>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
+        <img src="https://github-readme-stats.vercel.app/api?username=asaduljie&show_icons=true&theme=tokyonight&count_private=true&hide_border=true" alt="GitHub Stats" style="max-width: 100%; border-radius: 16px; border: 1px solid var(--border-color);" />
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=asaduljie&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" style="max-width: 100%; border-radius: 16px; border: 1px solid var(--border-color);" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <h2 class="contact-title">Tertarik Berkolaborasi?</h2>
+        <p class="contact-desc">
+          Mari diskusikan pengembangan website, aplikasi mobile, integrasi AI, atau proyek data mining bersama saya.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:asaduljie123@gmail.com" class="btn-primary">
+            <i data-lucide="mail" style="width: 18px; height: 18px;"></i> Kirim Email (asaduljie123@gmail.com)
+          </a>
+          <a href="https://github.com/asaduljie" target="_blank" class="btn-secondary">
+            <i data-lucide="github" style="width: 18px; height: 18px;"></i> Kunjungi GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Asadul Hayyan (@asaduljie). All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    lucide.createIcons();
+
+    function filterProjects(category, btnElement) {
+      // Toggle active button
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        const cats = card.getAttribute('data-category');
+        if (category === 'all' || cats.includes(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
